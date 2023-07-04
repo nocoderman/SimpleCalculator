@@ -1,0 +1,269 @@
+.calculator {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    background: #4e54c8;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+
+}
+
+.calc-container{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    /* border:solid white; */
+    background-color: lightgrey;
+    border-radius:6%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    width:300px;
+    height:400px;
+}
+  
+input[type='text'] {
+    width:200px;
+    height:30px;
+    margin-bottom:10px;
+    text-align:right;
+}
+
+input[type='checkbox']{
+    position: relative;
+}
+  
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    grid-template-areas:
+    'clear clear clear divide'
+    'seven eight nine multiply'
+    'four five six subtract'
+    'one two three add'
+    'zero zero dot equal';
+}
+  
+button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border:0;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 10%;
+    background-color: whitesmoke;
+    transition: background-color 0.3s ease;
+}
+ 
+.equal {
+    background-color: lightsteelblue;
+    grid-area: equal;   
+    transition: background-color 0.3s ease;
+
+}
+.equal:hover {
+    background-color: lightslategray;
+}
+
+#clear {
+    background-color: lightsalmon;
+    grid-area: clear;
+    transition: background-color 0.3s ease;
+}
+
+#clear:hover {
+    background-color: salmon;
+}
+
+button[name='/'] {
+    grid-area: divide;
+    background-color: lightgoldenrodyellow;
+}
+
+button[name='7'] {
+    grid-area: seven;
+}
+
+button[name='8'] {
+    grid-area: eight;
+}
+
+button[name='9'] {
+    grid-area: nine;
+}
+
+button[name='*'] {
+    grid-area: multiply;
+    background-color: lightgoldenrodyellow;
+}
+
+button[name='4'] {
+    grid-area: four;
+}
+
+button[name='5'] {
+    grid-area: five;
+}
+
+button[name='6'] {
+    grid-area: six;
+}
+
+button[name='-'] {
+    grid-area: subtract;
+    background-color: lightgoldenrodyellow;
+}
+
+button[name='1'] {
+    grid-area: one;
+}
+
+button[name='2'] {
+    grid-area: two;
+}
+
+button[name='3'] {
+    grid-area: three;
+}
+
+button[name='+'] {
+    background-color: lightgoldenrodyellow;
+    grid-area: add;
+}
+
+button[name='0'] {
+    grid-area: zero;
+}
+
+button[name='.'] {
+    grid-area: dot;
+}
+
+#result {
+    grid-area: equal;
+}
+
+button[name="+"]:hover, button[name="*"]:hover, button[name="-"]:hover, 
+button[name="/"]:hover{
+    background-color: goldenrod;
+}
+
+button[name="."]:hover, button[name="0"]:hover, button[name="1"]:hover, button[name="2"]:hover, 
+button[name="3"]:hover, button[name="4"]:hover, button[name="5"]:hover, button[name="6"]:hover, 
+button[name="7"]:hover, button[name="8"]:hover, button[name="9"]:hover{
+    background-color: antiquewhite;
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
